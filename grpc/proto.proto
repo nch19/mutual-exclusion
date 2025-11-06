@@ -1,0 +1,24 @@
+syntax = "proto3";
+option go_package = "mutual-exclusion/grpc";
+
+// request for cs
+message AccessRequest{
+    int64 time = 1;
+    int64 id = 2;
+}
+
+message AccessGrant{
+}
+
+//to inform nodes about amounts of nodes connected
+message ConnectionAmount{
+    int64 node_amount = 1;
+}
+message Empty{
+}
+
+service CriticalService{
+    rpc UpdateNodeCount (ConnectionAmount) returns (Empty){};
+    rpc RequestAccess (AccessRequest) returns (AccessGrant){};
+}
+
