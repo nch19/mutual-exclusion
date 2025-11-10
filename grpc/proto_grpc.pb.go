@@ -19,18 +19,18 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CriticalService_Connect_FullMethodName         = "/CriticalService/Connect"
 	CriticalService_UpdateNodeCount_FullMethodName = "/CriticalService/UpdateNodeCount"
 	CriticalService_RequestAccess_FullMethodName   = "/CriticalService/RequestAccess"
+	CriticalService_GrantAccess_FullMethodName     = "/CriticalService/GrantAccess"
 )
 
 // CriticalServiceClient is the client API for CriticalService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CriticalServiceClient interface {
-	Connect(ctx context.Context, in *ConnectionRequest, opts ...grpc.CallOption) (*ConnectionGrant, error)
 	UpdateNodeCount(ctx context.Context, in *ConnectionAmount, opts ...grpc.CallOption) (*Empty, error)
-	RequestAccess(ctx context.Context, in *AccessRequest, opts ...grpc.CallOption) (*AccessGrant, error)
+	RequestAccess(ctx context.Context, in *AccessRequest, opts ...grpc.CallOption) (*Empty, error)
+	GrantAccess(ctx context.Context, in *AccessGrant, opts ...grpc.CallOption) (*Empty, error)
 }
 
 type criticalServiceClient struct {
@@ -39,16 +39,6 @@ type criticalServiceClient struct {
 
 func NewCriticalServiceClient(cc grpc.ClientConnInterface) CriticalServiceClient {
 	return &criticalServiceClient{cc}
-}
-
-func (c *criticalServiceClient) Connect(ctx context.Context, in *ConnectionRequest, opts ...grpc.CallOption) (*ConnectionGrant, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ConnectionGrant)
-	err := c.cc.Invoke(ctx, CriticalService_Connect_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *criticalServiceClient) UpdateNodeCount(ctx context.Context, in *ConnectionAmount, opts ...grpc.CallOption) (*Empty, error) {
@@ -61,10 +51,20 @@ func (c *criticalServiceClient) UpdateNodeCount(ctx context.Context, in *Connect
 	return out, nil
 }
 
-func (c *criticalServiceClient) RequestAccess(ctx context.Context, in *AccessRequest, opts ...grpc.CallOption) (*AccessGrant, error) {
+func (c *criticalServiceClient) RequestAccess(ctx context.Context, in *AccessRequest, opts ...grpc.CallOption) (*Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(AccessGrant)
+	out := new(Empty)
 	err := c.cc.Invoke(ctx, CriticalService_RequestAccess_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *criticalServiceClient) GrantAccess(ctx context.Context, in *AccessGrant, opts ...grpc.CallOption) (*Empty, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, CriticalService_GrantAccess_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,9 +75,9 @@ func (c *criticalServiceClient) RequestAccess(ctx context.Context, in *AccessReq
 // All implementations must embed UnimplementedCriticalServiceServer
 // for forward compatibility.
 type CriticalServiceServer interface {
-	Connect(context.Context, *ConnectionRequest) (*ConnectionGrant, error)
 	UpdateNodeCount(context.Context, *ConnectionAmount) (*Empty, error)
-	RequestAccess(context.Context, *AccessRequest) (*AccessGrant, error)
+	RequestAccess(context.Context, *AccessRequest) (*Empty, error)
+	GrantAccess(context.Context, *AccessGrant) (*Empty, error)
 	mustEmbedUnimplementedCriticalServiceServer()
 }
 
@@ -88,14 +88,14 @@ type CriticalServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedCriticalServiceServer struct{}
 
-func (UnimplementedCriticalServiceServer) Connect(context.Context, *ConnectionRequest) (*ConnectionGrant, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Connect not implemented")
-}
 func (UnimplementedCriticalServiceServer) UpdateNodeCount(context.Context, *ConnectionAmount) (*Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNodeCount not implemented")
 }
-func (UnimplementedCriticalServiceServer) RequestAccess(context.Context, *AccessRequest) (*AccessGrant, error) {
+func (UnimplementedCriticalServiceServer) RequestAccess(context.Context, *AccessRequest) (*Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RequestAccess not implemented")
+}
+func (UnimplementedCriticalServiceServer) GrantAccess(context.Context, *AccessGrant) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GrantAccess not implemented")
 }
 func (UnimplementedCriticalServiceServer) mustEmbedUnimplementedCriticalServiceServer() {}
 func (UnimplementedCriticalServiceServer) testEmbeddedByValue()                         {}
@@ -116,24 +116,6 @@ func RegisterCriticalServiceServer(s grpc.ServiceRegistrar, srv CriticalServiceS
 		t.testEmbeddedByValue()
 	}
 	s.RegisterService(&CriticalService_ServiceDesc, srv)
-}
-
-func _CriticalService_Connect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ConnectionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CriticalServiceServer).Connect(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: CriticalService_Connect_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CriticalServiceServer).Connect(ctx, req.(*ConnectionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _CriticalService_UpdateNodeCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -172,6 +154,24 @@ func _CriticalService_RequestAccess_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CriticalService_GrantAccess_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AccessGrant)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CriticalServiceServer).GrantAccess(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: CriticalService_GrantAccess_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CriticalServiceServer).GrantAccess(ctx, req.(*AccessGrant))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CriticalService_ServiceDesc is the grpc.ServiceDesc for CriticalService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -180,16 +180,16 @@ var CriticalService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*CriticalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Connect",
-			Handler:    _CriticalService_Connect_Handler,
-		},
-		{
 			MethodName: "UpdateNodeCount",
 			Handler:    _CriticalService_UpdateNodeCount_Handler,
 		},
 		{
 			MethodName: "RequestAccess",
 			Handler:    _CriticalService_RequestAccess_Handler,
+		},
+		{
+			MethodName: "GrantAccess",
+			Handler:    _CriticalService_GrantAccess_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

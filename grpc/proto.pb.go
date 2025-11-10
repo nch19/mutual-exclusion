@@ -76,6 +76,8 @@ func (x *AccessRequest) GetId() int64 {
 
 type AccessGrant struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Time          int64                  `protobuf:"varint,1,opt,name=time,proto3" json:"time,omitempty"`
+	Id            int64                  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -110,89 +112,14 @@ func (*AccessGrant) Descriptor() ([]byte, []int) {
 	return file_proto_proto_rawDescGZIP(), []int{1}
 }
 
-// request for port it should start on
-type ConnectionRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ConnectionRequest) Reset() {
-	*x = ConnectionRequest{}
-	mi := &file_proto_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ConnectionRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ConnectionRequest) ProtoMessage() {}
-
-func (x *ConnectionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ConnectionRequest.ProtoReflect.Descriptor instead.
-func (*ConnectionRequest) Descriptor() ([]byte, []int) {
-	return file_proto_proto_rawDescGZIP(), []int{2}
-}
-
-type ConnectionGrant struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Time          int64                  `protobuf:"varint,1,opt,name=time,proto3" json:"time,omitempty"`
-	Id            int64                  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"` //the port will become the id
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ConnectionGrant) Reset() {
-	*x = ConnectionGrant{}
-	mi := &file_proto_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ConnectionGrant) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ConnectionGrant) ProtoMessage() {}
-
-func (x *ConnectionGrant) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ConnectionGrant.ProtoReflect.Descriptor instead.
-func (*ConnectionGrant) Descriptor() ([]byte, []int) {
-	return file_proto_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *ConnectionGrant) GetTime() int64 {
+func (x *AccessGrant) GetTime() int64 {
 	if x != nil {
 		return x.Time
 	}
 	return 0
 }
 
-func (x *ConnectionGrant) GetId() int64 {
+func (x *AccessGrant) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
@@ -209,7 +136,7 @@ type ConnectionAmount struct {
 
 func (x *ConnectionAmount) Reset() {
 	*x = ConnectionAmount{}
-	mi := &file_proto_proto_msgTypes[4]
+	mi := &file_proto_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -221,7 +148,7 @@ func (x *ConnectionAmount) String() string {
 func (*ConnectionAmount) ProtoMessage() {}
 
 func (x *ConnectionAmount) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_proto_msgTypes[4]
+	mi := &file_proto_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -234,7 +161,7 @@ func (x *ConnectionAmount) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConnectionAmount.ProtoReflect.Descriptor instead.
 func (*ConnectionAmount) Descriptor() ([]byte, []int) {
-	return file_proto_proto_rawDescGZIP(), []int{4}
+	return file_proto_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ConnectionAmount) GetNodeAmount() int64 {
@@ -252,7 +179,7 @@ type Empty struct {
 
 func (x *Empty) Reset() {
 	*x = Empty{}
-	mi := &file_proto_proto_msgTypes[5]
+	mi := &file_proto_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -264,7 +191,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_proto_msgTypes[5]
+	mi := &file_proto_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -277,7 +204,7 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_proto_proto_rawDescGZIP(), []int{5}
+	return file_proto_proto_rawDescGZIP(), []int{3}
 }
 
 var File_proto_proto protoreflect.FileDescriptor
@@ -287,20 +214,18 @@ const file_proto_proto_rawDesc = "" +
 	"\vproto.proto\"3\n" +
 	"\rAccessRequest\x12\x12\n" +
 	"\x04time\x18\x01 \x01(\x03R\x04time\x12\x0e\n" +
-	"\x02id\x18\x02 \x01(\x03R\x02id\"\r\n" +
-	"\vAccessGrant\"\x13\n" +
-	"\x11ConnectionRequest\"5\n" +
-	"\x0fConnectionGrant\x12\x12\n" +
+	"\x02id\x18\x02 \x01(\x03R\x02id\"1\n" +
+	"\vAccessGrant\x12\x12\n" +
 	"\x04time\x18\x01 \x01(\x03R\x04time\x12\x0e\n" +
 	"\x02id\x18\x02 \x01(\x03R\x02id\"3\n" +
 	"\x10ConnectionAmount\x12\x1f\n" +
 	"\vnode_amount\x18\x01 \x01(\x03R\n" +
 	"nodeAmount\"\a\n" +
-	"\x05Empty2\xa5\x01\n" +
-	"\x0fCriticalService\x121\n" +
-	"\aConnect\x12\x12.ConnectionRequest\x1a\x10.ConnectionGrant\"\x00\x12.\n" +
-	"\x0fUpdateNodeCount\x12\x11.ConnectionAmount\x1a\x06.Empty\"\x00\x12/\n" +
-	"\rRequestAccess\x12\x0e.AccessRequest\x1a\f.AccessGrant\"\x00B\x17Z\x15mutual-exclusion/grpcb\x06proto3"
+	"\x05Empty2\x93\x01\n" +
+	"\x0fCriticalService\x12.\n" +
+	"\x0fUpdateNodeCount\x12\x11.ConnectionAmount\x1a\x06.Empty\"\x00\x12)\n" +
+	"\rRequestAccess\x12\x0e.AccessRequest\x1a\x06.Empty\"\x00\x12%\n" +
+	"\vGrantAccess\x12\f.AccessGrant\x1a\x06.Empty\"\x00B\x17Z\x15mutual-exclusion/grpcb\x06proto3"
 
 var (
 	file_proto_proto_rawDescOnce sync.Once
@@ -314,22 +239,20 @@ func file_proto_proto_rawDescGZIP() []byte {
 	return file_proto_proto_rawDescData
 }
 
-var file_proto_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_proto_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_proto_proto_goTypes = []any{
-	(*AccessRequest)(nil),     // 0: AccessRequest
-	(*AccessGrant)(nil),       // 1: AccessGrant
-	(*ConnectionRequest)(nil), // 2: ConnectionRequest
-	(*ConnectionGrant)(nil),   // 3: ConnectionGrant
-	(*ConnectionAmount)(nil),  // 4: ConnectionAmount
-	(*Empty)(nil),             // 5: Empty
+	(*AccessRequest)(nil),    // 0: AccessRequest
+	(*AccessGrant)(nil),      // 1: AccessGrant
+	(*ConnectionAmount)(nil), // 2: ConnectionAmount
+	(*Empty)(nil),            // 3: Empty
 }
 var file_proto_proto_depIdxs = []int32{
-	2, // 0: CriticalService.Connect:input_type -> ConnectionRequest
-	4, // 1: CriticalService.UpdateNodeCount:input_type -> ConnectionAmount
-	0, // 2: CriticalService.RequestAccess:input_type -> AccessRequest
-	3, // 3: CriticalService.Connect:output_type -> ConnectionGrant
-	5, // 4: CriticalService.UpdateNodeCount:output_type -> Empty
-	1, // 5: CriticalService.RequestAccess:output_type -> AccessGrant
+	2, // 0: CriticalService.UpdateNodeCount:input_type -> ConnectionAmount
+	0, // 1: CriticalService.RequestAccess:input_type -> AccessRequest
+	1, // 2: CriticalService.GrantAccess:input_type -> AccessGrant
+	3, // 3: CriticalService.UpdateNodeCount:output_type -> Empty
+	3, // 4: CriticalService.RequestAccess:output_type -> Empty
+	3, // 5: CriticalService.GrantAccess:output_type -> Empty
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -348,7 +271,7 @@ func file_proto_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_proto_rawDesc), len(file_proto_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
