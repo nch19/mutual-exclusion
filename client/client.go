@@ -88,17 +88,17 @@ func (s *CriticalService) process() {
 		s.time += 1
 		s.req_time = s.time
 		s.mutex.Unlock()
-		log.Printf("%d is requesting access\n", s.id)
+		log.Printf("%d is requesting access with time %d\n", s.id, s.req_time)
 		var requests_sent int64 = 0
-		s.mutex.Lock()
 		for _, node := range s.node_map {
+			s.mutex.Lock()
 			s.time += 1
+			s.mutex.Unlock()
 			_, err := node.RequestAccess(context.Background(), &proto.AccessRequest{Time: s.req_time, Id: s.id})
 			if err == nil {
 				requests_sent += 1
 			}
 		}
-		s.mutex.Unlock()
 
 		for s.granted < requests_sent {
 		}
@@ -119,7 +119,7 @@ func (s *CriticalService) process() {
 
 func (s *CriticalService) UpdateNodeCount(ctx context.Context, in *proto.ConnectionAmount) (*proto.Empty, error) {
 	s.mutex.Lock()
-	for i := range in.NodeAmount - s.node_amount {
+	for i := int64(0); i < in.NodeAmount-s.node_amount; i++ {
 		port := fmt.Sprintf(":%d", 8080+s.node_amount+i)
 		conn, err := grpc.NewClient("localhost"+port, grpc.WithTransportCredentials(insecure.NewCredentials()))
 		if err != nil {
