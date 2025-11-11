@@ -1,0 +1,375 @@
+2025/11/11 13:39:08 1 is requesting access with time 2
+2025/11/11 13:39:08 1 received access request from 0 with request time 2 and own request time 2
+2025/11/11 13:39:08 1 is giving 0 access
+2025/11/11 13:39:08 1 access allowed by 0
+2025/11/11 13:39:08 1 received access request from 2 with request time 3 and own request time 2
+2025/11/11 13:39:08 1 is adding 2 to queue
+2025/11/11 13:39:08 1 access allowed by 2
+2025/11/11 13:39:08 1 got access to CS. Request time 2, access time 12
+2025/11/11 13:39:08 1 released access to CS
+2025/11/11 13:39:08 1 is requesting access with time 14
+2025/11/11 13:39:08 1 received access request from 0 with request time 7 and own request time 14
+2025/11/11 13:39:08 1 is giving 0 access
+2025/11/11 13:39:08 1 access allowed by 0
+2025/11/11 13:39:08 1 received access request from 2 with request time 15 and own request time 14
+2025/11/11 13:39:08 1 is adding 2 to queue
+2025/11/11 13:39:08 1 access allowed by 2
+2025/11/11 13:39:08 1 got access to CS. Request time 14, access time 25
+2025/11/11 13:39:08 1 released access to CS
+2025/11/11 13:39:08 1 is requesting access with time 27
+2025/11/11 13:39:08 1 received access request from 0 with request time 20 and own request time 27
+2025/11/11 13:39:08 1 is giving 0 access
+2025/11/11 13:39:08 1 access allowed by 0
+2025/11/11 13:39:08 1 access allowed by 2
+2025/11/11 13:39:08 1 received access request from 2 with request time 29 and own request time 27
+2025/11/11 13:39:08 1 is adding 2 to queue
+2025/11/11 13:39:08 1 got access to CS. Request time 27, access time 38
+2025/11/11 13:39:08 1 released access to CS
+2025/11/11 13:39:08 1 is requesting access with time 40
+2025/11/11 13:39:09 1 received access request from 0 with request time 33 and own request time 40
+2025/11/11 13:39:09 1 is giving 0 access
+2025/11/11 13:39:09 1 access allowed by 2
+2025/11/11 13:39:09 1 received access request from 2 with request time 41 and own request time 40
+2025/11/11 13:39:09 1 is adding 2 to queue
+2025/11/11 13:39:09 1 access allowed by 0
+2025/11/11 13:39:09 1 got access to CS. Request time 40, access time 48
+2025/11/11 13:39:09 1 released access to CS
+2025/11/11 13:39:09 1 is requesting access with time 50
+2025/11/11 13:39:09 1 received access request from 0 with request time 45 and own request time 50
+2025/11/11 13:39:09 1 is giving 0 access
+2025/11/11 13:39:09 1 access allowed by 0
+2025/11/11 13:39:09 1 access allowed by 2
+2025/11/11 13:39:09 1 got access to CS. Request time 50, access time 60
+2025/11/11 13:39:09 1 released access to CS
+2025/11/11 13:39:09 1 is requesting access with time 61
+2025/11/11 13:39:09 1 received access request from 2 with request time 52 and own request time 61
+2025/11/11 13:39:09 1 is giving 2 access
+2025/11/11 13:39:09 1 received access request from 0 with request time 56 and own request time 61
+2025/11/11 13:39:09 1 is giving 0 access
+2025/11/11 13:39:09 1 received access request from 2 with request time 65 and own request time 61
+2025/11/11 13:39:09 1 is adding 2 to queue
+2025/11/11 13:39:09 1 access allowed by 0
+2025/11/11 13:39:09 1 access allowed by 2
+2025/11/11 13:39:09 1 got access to CS. Request time 61, access time 74
+2025/11/11 13:39:09 1 released access to CS
+2025/11/11 13:39:09 1 is requesting access with time 76
+2025/11/11 13:39:09 1 received access request from 0 with request time 69 and own request time 76
+2025/11/11 13:39:09 1 is giving 0 access
+2025/11/11 13:39:09 1 access allowed by 0
+2025/11/11 13:39:09 1 received access request from 2 with request time 77 and own request time 76
+2025/11/11 13:39:09 1 is adding 2 to queue
+2025/11/11 13:39:09 1 access allowed by 2
+2025/11/11 13:39:09 1 got access to CS. Request time 76, access time 88
+2025/11/11 13:39:09 1 released access to CS
+2025/11/11 13:39:09 1 is requesting access with time 90
+2025/11/11 13:39:09 1 received access request from 0 with request time 81 and own request time 90
+2025/11/11 13:39:09 1 is giving 0 access
+2025/11/11 13:39:09 1 received access request from 2 with request time 91 and own request time 90
+2025/11/11 13:39:09 1 is adding 2 to queue
+2025/11/11 13:39:09 1 access allowed by 0
+2025/11/11 13:39:09 1 access allowed by 2
+2025/11/11 13:39:09 1 got access to CS. Request time 90, access time 101
+2025/11/11 13:39:09 1 released access to CS
+2025/11/11 13:39:09 1 is requesting access with time 103
+2025/11/11 13:39:10 1 received access request from 0 with request time 95 and own request time 103
+2025/11/11 13:39:10 1 is giving 0 access
+2025/11/11 13:39:10 1 access allowed by 2
+2025/11/11 13:39:10 1 received access request from 2 with request time 104 and own request time 103
+2025/11/11 13:39:10 1 is adding 2 to queue
+2025/11/11 13:39:10 1 access allowed by 0
+2025/11/11 13:39:10 1 got access to CS. Request time 103, access time 111
+2025/11/11 13:39:10 1 released access to CS
+2025/11/11 13:39:10 1 is requesting access with time 113
+2025/11/11 13:39:10 1 received access request from 0 with request time 108 and own request time 113
+2025/11/11 13:39:10 1 is giving 0 access
+2025/11/11 13:39:10 1 received access request from 2 with request time 115 and own request time 113
+2025/11/11 13:39:10 1 is adding 2 to queue
+2025/11/11 13:39:10 1 access allowed by 2
+2025/11/11 13:39:10 1 access allowed by 0
+2025/11/11 13:39:10 1 got access to CS. Request time 113, access time 126
+2025/11/11 13:39:10 1 released access to CS
+2025/11/11 13:39:10 1 is requesting access with time 128
+2025/11/11 13:39:10 1 received access request from 0 with request time 119 and own request time 128
+2025/11/11 13:39:10 1 is giving 0 access
+2025/11/11 13:39:10 1 access allowed by 0
+2025/11/11 13:39:10 1 received access request from 2 with request time 129 and own request time 128
+2025/11/11 13:39:10 1 is adding 2 to queue
+2025/11/11 13:39:10 1 access allowed by 2
+2025/11/11 13:39:10 1 got access to CS. Request time 128, access time 138
+2025/11/11 13:39:10 1 released access to CS
+2025/11/11 13:39:10 1 is requesting access with time 140
+2025/11/11 13:39:10 1 received access request from 0 with request time 133 and own request time 140
+2025/11/11 13:39:10 1 is giving 0 access
+2025/11/11 13:39:10 1 access allowed by 0
+2025/11/11 13:39:10 1 received access request from 2 with request time 141 and own request time 140
+2025/11/11 13:39:10 1 is adding 2 to queue
+2025/11/11 13:39:10 1 access allowed by 2
+2025/11/11 13:39:10 1 got access to CS. Request time 140, access time 150
+2025/11/11 13:39:10 1 released access to CS
+2025/11/11 13:39:10 1 is requesting access with time 152
+2025/11/11 13:39:10 1 received access request from 0 with request time 145 and own request time 152
+2025/11/11 13:39:10 1 is giving 0 access
+2025/11/11 13:39:10 1 access allowed by 0
+2025/11/11 13:39:10 1 access allowed by 2
+2025/11/11 13:39:10 1 got access to CS. Request time 152, access time 162
+2025/11/11 13:39:10 1 released access to CS
+2025/11/11 13:39:10 1 is requesting access with time 163
+2025/11/11 13:39:10 1 received access request from 2 with request time 153 and own request time 163
+2025/11/11 13:39:10 1 is giving 2 access
+2025/11/11 13:39:11 1 received access request from 0 with request time 158 and own request time 163
+2025/11/11 13:39:11 1 is giving 0 access
+2025/11/11 13:39:11 1 access allowed by 2
+2025/11/11 13:39:11 1 received access request from 2 with request time 167 and own request time 163
+2025/11/11 13:39:11 1 is adding 2 to queue
+2025/11/11 13:39:11 1 access allowed by 0
+2025/11/11 13:39:11 1 got access to CS. Request time 163, access time 176
+2025/11/11 13:39:11 1 released access to CS
+2025/11/11 13:39:11 1 is requesting access with time 178
+2025/11/11 13:39:11 1 received access request from 0 with request time 171 and own request time 178
+2025/11/11 13:39:11 1 is giving 0 access
+2025/11/11 13:39:11 1 access allowed by 0
+2025/11/11 13:39:11 1 received access request from 2 with request time 179 and own request time 178
+2025/11/11 13:39:11 1 is adding 2 to queue
+2025/11/11 13:39:11 1 access allowed by 2
+2025/11/11 13:39:11 1 got access to CS. Request time 178, access time 188
+2025/11/11 13:39:11 1 released access to CS
+2025/11/11 13:39:11 1 is requesting access with time 190
+2025/11/11 13:39:11 1 received access request from 0 with request time 183 and own request time 190
+2025/11/11 13:39:11 1 is giving 0 access
+2025/11/11 13:39:11 1 access allowed by 0
+2025/11/11 13:39:11 1 access allowed by 2
+2025/11/11 13:39:11 1 received access request from 2 with request time 192 and own request time 190
+2025/11/11 13:39:11 1 is adding 2 to queue
+2025/11/11 13:39:11 1 got access to CS. Request time 190, access time 201
+2025/11/11 13:39:11 1 released access to CS
+2025/11/11 13:39:11 1 is requesting access with time 203
+2025/11/11 13:39:11 1 received access request from 0 with request time 196 and own request time 203
+2025/11/11 13:39:11 1 is giving 0 access
+2025/11/11 13:39:11 1 access allowed by 0
+2025/11/11 13:39:11 1 received access request from 2 with request time 204 and own request time 203
+2025/11/11 13:39:11 1 is adding 2 to queue
+2025/11/11 13:39:11 1 access allowed by 2
+2025/11/11 13:39:11 1 got access to CS. Request time 203, access time 213
+2025/11/11 13:39:11 1 released access to CS
+2025/11/11 13:39:11 1 is requesting access with time 215
+2025/11/11 13:39:11 1 received access request from 0 with request time 208 and own request time 215
+2025/11/11 13:39:11 1 is giving 0 access
+2025/11/11 13:39:11 1 received access request from 2 with request time 216 and own request time 215
+2025/11/11 13:39:11 1 is adding 2 to queue
+2025/11/11 13:39:11 1 access allowed by 0
+2025/11/11 13:39:11 1 access allowed by 2
+2025/11/11 13:39:11 1 got access to CS. Request time 215, access time 224
+2025/11/11 13:39:11 1 released access to CS
+2025/11/11 13:39:11 1 is requesting access with time 226
+2025/11/11 13:39:12 1 received access request from 0 with request time 220 and own request time 226
+2025/11/11 13:39:12 1 is giving 0 access
+2025/11/11 13:39:12 1 access allowed by 2
+2025/11/11 13:39:12 1 received access request from 2 with request time 227 and own request time 226
+2025/11/11 13:39:12 1 is adding 2 to queue
+2025/11/11 13:39:12 1 access allowed by 0
+2025/11/11 13:39:12 1 got access to CS. Request time 226, access time 236
+2025/11/11 13:39:12 1 released access to CS
+2025/11/11 13:39:12 1 is requesting access with time 238
+2025/11/11 13:39:12 1 received access request from 0 with request time 231 and own request time 238
+2025/11/11 13:39:12 1 is giving 0 access
+2025/11/11 13:39:12 1 access allowed by 0
+2025/11/11 13:39:12 1 access allowed by 2
+2025/11/11 13:39:12 1 got access to CS. Request time 238, access time 247
+2025/11/11 13:39:12 1 released access to CS
+2025/11/11 13:39:12 1 is requesting access with time 248
+2025/11/11 13:39:12 1 received access request from 2 with request time 239 and own request time 248
+2025/11/11 13:39:12 1 is giving 2 access
+2025/11/11 13:39:12 1 received access request from 0 with request time 243 and own request time 248
+2025/11/11 13:39:12 1 is giving 0 access
+2025/11/11 13:39:12 1 access allowed by 0
+2025/11/11 13:39:12 1 access allowed by 2
+2025/11/11 13:39:12 1 received access request from 2 with request time 252 and own request time 248
+2025/11/11 13:39:12 1 is adding 2 to queue
+2025/11/11 13:39:12 1 got access to CS. Request time 248, access time 261
+2025/11/11 13:39:12 1 released access to CS
+2025/11/11 13:39:12 1 is requesting access with time 263
+2025/11/11 13:39:12 1 received access request from 0 with request time 256 and own request time 263
+2025/11/11 13:39:12 1 is giving 0 access
+2025/11/11 13:39:12 1 received access request from 2 with request time 264 and own request time 263
+2025/11/11 13:39:12 1 is adding 2 to queue
+2025/11/11 13:39:12 1 access allowed by 0
+2025/11/11 13:39:12 1 access allowed by 2
+2025/11/11 13:39:12 1 got access to CS. Request time 263, access time 272
+2025/11/11 13:39:12 1 released access to CS
+2025/11/11 13:39:12 1 is requesting access with time 274
+2025/11/11 13:39:12 1 received access request from 0 with request time 268 and own request time 274
+2025/11/11 13:39:12 1 is giving 0 access
+2025/11/11 13:39:12 1 access allowed by 0
+2025/11/11 13:39:12 1 received access request from 2 with request time 275 and own request time 274
+2025/11/11 13:39:12 1 is adding 2 to queue
+2025/11/11 13:39:12 1 access allowed by 2
+2025/11/11 13:39:12 1 got access to CS. Request time 274, access time 285
+2025/11/11 13:39:12 1 released access to CS
+2025/11/11 13:39:12 1 is requesting access with time 287
+2025/11/11 13:39:13 1 received access request from 0 with request time 279 and own request time 287
+2025/11/11 13:39:13 1 is giving 0 access
+2025/11/11 13:39:13 1 received access request from 2 with request time 288 and own request time 287
+2025/11/11 13:39:13 1 is adding 2 to queue
+2025/11/11 13:39:13 1 access allowed by 0
+2025/11/11 13:39:13 1 access allowed by 2
+2025/11/11 13:39:13 1 got access to CS. Request time 287, access time 299
+2025/11/11 13:39:13 1 released access to CS
+2025/11/11 13:39:13 1 is requesting access with time 301
+2025/11/11 13:39:13 1 received access request from 0 with request time 292 and own request time 301
+2025/11/11 13:39:13 1 is giving 0 access
+2025/11/11 13:39:13 1 access allowed by 0
+2025/11/11 13:39:13 1 access allowed by 2
+2025/11/11 13:39:13 1 got access to CS. Request time 301, access time 311
+2025/11/11 13:39:13 1 released access to CS
+2025/11/11 13:39:13 1 is requesting access with time 312
+2025/11/11 13:39:13 1 received access request from 2 with request time 302 and own request time 312
+2025/11/11 13:39:13 1 is giving 2 access
+2025/11/11 13:39:13 1 received access request from 0 with request time 307 and own request time 312
+2025/11/11 13:39:13 1 is giving 0 access
+2025/11/11 13:39:13 1 access allowed by 0
+2025/11/11 13:39:13 1 received access request from 2 with request time 316 and own request time 312
+2025/11/11 13:39:13 1 is adding 2 to queue
+2025/11/11 13:39:13 1 access allowed by 2
+2025/11/11 13:39:13 1 got access to CS. Request time 312, access time 327
+2025/11/11 13:39:13 1 released access to CS
+2025/11/11 13:39:13 1 is requesting access with time 329
+2025/11/11 13:39:13 1 received access request from 0 with request time 320 and own request time 329
+2025/11/11 13:39:13 1 is giving 0 access
+2025/11/11 13:39:13 1 received access request from 2 with request time 330 and own request time 329
+2025/11/11 13:39:13 1 is adding 2 to queue
+2025/11/11 13:39:13 1 access allowed by 0
+2025/11/11 13:39:13 1 access allowed by 2
+2025/11/11 13:39:13 1 got access to CS. Request time 329, access time 341
+2025/11/11 13:39:13 1 released access to CS
+2025/11/11 13:39:13 1 is requesting access with time 343
+2025/11/11 13:39:13 1 received access request from 0 with request time 335 and own request time 343
+2025/11/11 13:39:13 1 is giving 0 access
+2025/11/11 13:39:13 1 access allowed by 0
+2025/11/11 13:39:13 1 access allowed by 2
+2025/11/11 13:39:13 1 got access to CS. Request time 343, access time 352
+2025/11/11 13:39:13 1 released access to CS
+2025/11/11 13:39:13 1 is requesting access with time 353
+2025/11/11 13:39:13 1 received access request from 2 with request time 344 and own request time 353
+2025/11/11 13:39:13 1 is giving 2 access
+2025/11/11 13:39:14 1 received access request from 0 with request time 348 and own request time 353
+2025/11/11 13:39:14 1 is giving 0 access
+2025/11/11 13:39:14 1 access allowed by 0
+2025/11/11 13:39:14 1 access allowed by 2
+2025/11/11 13:39:14 1 got access to CS. Request time 353, access time 365
+2025/11/11 13:39:14 1 released access to CS
+2025/11/11 13:39:14 1 is requesting access with time 366
+2025/11/11 13:39:14 1 received access request from 2 with request time 357 and own request time 366
+2025/11/11 13:39:14 1 is giving 2 access
+2025/11/11 13:39:14 1 received access request from 0 with request time 361 and own request time 366
+2025/11/11 13:39:14 1 is giving 0 access
+2025/11/11 13:39:14 1 received access request from 2 with request time 370 and own request time 366
+2025/11/11 13:39:14 1 is adding 2 to queue
+2025/11/11 13:39:14 1 access allowed by 0
+2025/11/11 13:39:14 1 access allowed by 2
+2025/11/11 13:39:14 1 got access to CS. Request time 366, access time 380
+2025/11/11 13:39:14 1 released access to CS
+2025/11/11 13:39:14 1 is requesting access with time 382
+2025/11/11 13:39:14 1 received access request from 0 with request time 374 and own request time 382
+2025/11/11 13:39:14 1 is giving 0 access
+2025/11/11 13:39:14 1 access allowed by 0
+2025/11/11 13:39:14 1 received access request from 2 with request time 383 and own request time 382
+2025/11/11 13:39:14 1 is adding 2 to queue
+2025/11/11 13:39:14 1 access allowed by 2
+2025/11/11 13:39:14 1 got access to CS. Request time 382, access time 395
+2025/11/11 13:39:14 1 released access to CS
+2025/11/11 13:39:14 1 is requesting access with time 397
+2025/11/11 13:39:14 1 received access request from 0 with request time 387 and own request time 397
+2025/11/11 13:39:14 1 is giving 0 access
+2025/11/11 13:39:14 1 received access request from 2 with request time 398 and own request time 397
+2025/11/11 13:39:14 1 is adding 2 to queue
+2025/11/11 13:39:14 1 access allowed by 0
+2025/11/11 13:39:14 1 access allowed by 2
+2025/11/11 13:39:14 1 got access to CS. Request time 397, access time 408
+2025/11/11 13:39:14 1 released access to CS
+2025/11/11 13:39:14 1 is requesting access with time 410
+2025/11/11 13:39:14 1 received access request from 0 with request time 402 and own request time 410
+2025/11/11 13:39:14 1 is giving 0 access
+2025/11/11 13:39:14 1 access allowed by 0
+2025/11/11 13:39:14 1 received access request from 2 with request time 411 and own request time 410
+2025/11/11 13:39:14 1 is adding 2 to queue
+2025/11/11 13:39:14 1 access allowed by 2
+2025/11/11 13:39:14 1 got access to CS. Request time 410, access time 420
+2025/11/11 13:39:14 1 released access to CS
+2025/11/11 13:39:14 1 is requesting access with time 422
+2025/11/11 13:39:15 1 received access request from 0 with request time 415 and own request time 422
+2025/11/11 13:39:15 1 is giving 0 access
+2025/11/11 13:39:15 1 access allowed by 0
+2025/11/11 13:39:15 1 received access request from 2 with request time 423 and own request time 422
+2025/11/11 13:39:15 1 is adding 2 to queue
+2025/11/11 13:39:15 1 access allowed by 2
+2025/11/11 13:39:15 1 got access to CS. Request time 422, access time 433
+2025/11/11 13:39:15 1 released access to CS
+2025/11/11 13:39:15 1 is requesting access with time 435
+2025/11/11 13:39:15 1 received access request from 0 with request time 428 and own request time 435
+2025/11/11 13:39:15 1 is giving 0 access
+2025/11/11 13:39:15 1 access allowed by 0
+2025/11/11 13:39:15 1 access allowed by 2
+2025/11/11 13:39:15 1 got access to CS. Request time 435, access time 446
+2025/11/11 13:39:15 1 released access to CS
+2025/11/11 13:39:15 1 is requesting access with time 447
+2025/11/11 13:39:15 1 received access request from 2 with request time 437 and own request time 447
+2025/11/11 13:39:15 1 is giving 2 access
+2025/11/11 13:39:15 1 received access request from 0 with request time 442 and own request time 447
+2025/11/11 13:39:15 1 is giving 0 access
+2025/11/11 13:39:15 1 access allowed by 2
+2025/11/11 13:39:15 1 received access request from 2 with request time 451 and own request time 447
+2025/11/11 13:39:15 1 is adding 2 to queue
+2025/11/11 13:39:15 1 access allowed by 0
+2025/11/11 13:39:15 1 got access to CS. Request time 447, access time 461
+2025/11/11 13:39:15 1 released access to CS
+2025/11/11 13:39:15 1 is requesting access with time 463
+2025/11/11 13:39:15 1 received access request from 0 with request time 456 and own request time 463
+2025/11/11 13:39:15 1 is giving 0 access
+2025/11/11 13:39:15 1 access allowed by 0
+2025/11/11 13:39:15 1 received access request from 2 with request time 464 and own request time 463
+2025/11/11 13:39:15 1 is adding 2 to queue
+2025/11/11 13:39:15 1 access allowed by 2
+2025/11/11 13:39:15 1 got access to CS. Request time 463, access time 473
+2025/11/11 13:39:15 1 released access to CS
+2025/11/11 13:39:15 1 is requesting access with time 475
+2025/11/11 13:39:15 1 received access request from 0 with request time 468 and own request time 475
+2025/11/11 13:39:15 1 is giving 0 access
+2025/11/11 13:39:15 1 received access request from 2 with request time 476 and own request time 475
+2025/11/11 13:39:15 1 is adding 2 to queue
+2025/11/11 13:39:15 1 access allowed by 0
+2025/11/11 13:39:15 1 access allowed by 2
+2025/11/11 13:39:15 1 got access to CS. Request time 475, access time 486
+2025/11/11 13:39:15 1 released access to CS
+2025/11/11 13:39:15 1 is requesting access with time 488
+2025/11/11 13:39:16 1 received access request from 0 with request time 480 and own request time 488
+2025/11/11 13:39:16 1 is giving 0 access
+2025/11/11 13:39:16 1 access allowed by 0
+2025/11/11 13:39:16 1 access allowed by 2
+2025/11/11 13:39:16 1 got access to CS. Request time 488, access time 497
+2025/11/11 13:39:16 1 released access to CS
+2025/11/11 13:39:16 1 is requesting access with time 498
+2025/11/11 13:39:16 1 received access request from 2 with request time 489 and own request time 498
+2025/11/11 13:39:16 1 is giving 2 access
+2025/11/11 13:39:16 1 received access request from 0 with request time 493 and own request time 498
+2025/11/11 13:39:16 1 is giving 0 access
+2025/11/11 13:39:16 1 access allowed by 0
+2025/11/11 13:39:16 1 access allowed by 2
+2025/11/11 13:39:16 1 got access to CS. Request time 498, access time 510
+2025/11/11 13:39:16 1 released access to CS
+2025/11/11 13:39:16 1 is requesting access with time 511
+2025/11/11 13:39:16 1 received access request from 2 with request time 502 and own request time 511
+2025/11/11 13:39:16 1 is giving 2 access
+2025/11/11 13:39:16 1 access allowed by 2
+2025/11/11 13:39:16 1 got access to CS. Request time 511, access time 519
+2025/11/11 13:39:16 1 released access to CS
+2025/11/11 13:39:16 1 is requesting access with time 520
+2025/11/11 13:39:16 1 received access request from 2 with request time 515 and own request time 520
+2025/11/11 13:39:16 1 is giving 2 access
+2025/11/11 13:39:16 1 received access request from 2 with request time 524 and own request time 520
+2025/11/11 13:39:16 1 is adding 2 to queue
+2025/11/11 13:39:16 1 access allowed by 2
+2025/11/11 13:39:16 1 got access to CS. Request time 520, access time 529
+2025/11/11 13:39:16 1 released access to CS
+2025/11/11 13:39:16 1 is requesting access with time 531
+2025/11/11 13:39:16 Node stopped with time 531
+2025/11/11 13:39:16 ---------------------------------------------------------------

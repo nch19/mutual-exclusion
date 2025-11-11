@@ -6,7 +6,10 @@ import (
 	"log"
 	proto "mutual-exclusion/grpc"
 	"net"
+	"os"
+	"os/signal"
 	"sync"
+	"time"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -49,7 +52,7 @@ func (s *CriticalService) start_server() {
 	var err error
 
 	for {
-		//as long as it cant connect
+		//as long as it can't connect keep increasing port number by 1
 		port := fmt.Sprintf(":%d", 8080+s.id)
 		listener, err = net.Listen("tcp", port)
 		if err == nil {
@@ -63,18 +66,27 @@ func (s *CriticalService) start_server() {
 		s.node_map[s.id] = proto.NewCriticalServiceClient(conn)
 		s.id++
 	}
+	// Setup log writing to file
+	f, err := os.OpenFile(fmt.Sprintf("log%d.txt", s.id), os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+	log.SetOutput(f)
+
 	s.node_amount = s.id + 1
 	s.time = s.id
-	//update everything
+	//Inform other nodes about connection
 	for _, val := range s.node_map {
 		val.UpdateNodeCount(context.Background(), &proto.ConnectionAmount{NodeAmount: s.node_amount})
 	}
 	fmt.Printf("id: %d\n", s.id)
 
-	//creates the server
+	//create the server
 	proto.RegisterCriticalServiceServer(grpc_server, s)
 
 	go s.process()
+	go s.shutdown_logger(grpc_server)
 	err = grpc_server.Serve(listener)
 	if err != nil {
 		log.Fatal(err)
@@ -89,19 +101,23 @@ func (s *CriticalService) process() {
 		s.req_time = s.time
 		s.mutex.Unlock()
 		log.Printf("%d is requesting access with time %d\n", s.id, s.req_time)
+		time.Sleep(200 * time.Millisecond) // Done to simulate operations in CS and to slow down logger
 		var requests_sent int64 = 0
 		for _, node := range s.node_map {
 			s.mutex.Lock()
 			s.time += 1
 			s.mutex.Unlock()
 			_, err := node.RequestAccess(context.Background(), &proto.AccessRequest{Time: s.req_time, Id: s.id})
+			// If the request failed, don't increment the counter
 			if err == nil {
 				requests_sent += 1
 			}
 		}
 
+		// Await access grants from all sent requests.
 		for s.granted < requests_sent {
 		}
+		// All other nodes have approved access to CS
 		s.state = HELD
 		log.Printf("%d got access to CS. Request time %d, access time %d\n", s.id, s.req_time, s.time)
 		s.mutex.Lock()
@@ -115,6 +131,16 @@ func (s *CriticalService) process() {
 		s.queue = s.queue[:0]
 		s.mutex.Unlock()
 	}
+}
+
+func (s *CriticalService) shutdown_logger(grpc_server *grpc.Server) {
+	stop := make(chan os.Signal, 1)
+	signal.Notify(stop, os.Interrupt)
+
+	<-stop
+	log.Printf("Node stopped with time %d\n", s.time)
+	log.Println("---------------------------------------------------------------")
+	grpc_server.GracefulStop()
 }
 
 func (s *CriticalService) UpdateNodeCount(ctx context.Context, in *proto.ConnectionAmount) (*proto.Empty, error) {
