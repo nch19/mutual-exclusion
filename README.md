@@ -28,4 +28,4 @@ Stopping the System:
 Press ctrl+C in each terminal to shutdown
 
 Viewing Logs:
-Logs are written to client/log<id>.txt
+Logs are written to client/log\<id\>.txt
